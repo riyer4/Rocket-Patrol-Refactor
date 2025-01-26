@@ -9,6 +9,7 @@ class Menu extends Phaser.Scene {
 
         this.load.image('rocket', './assets/rocket.png')
         this.load.image('spaceship', './assets/spaceship.png')
+        this.load.image('miniSpaceship', './assets/miniSpaceship.png')
         this.load.image('starfield', './assets/starfield.png')
 
         ///spritesheet
@@ -72,6 +73,7 @@ class Menu extends Phaser.Scene {
 
           game.settings = {
             spaceshipSpeed: 3,
+            miniSpaceshipSpeed: 5,
             gameTimer: 60000    
           }
           
@@ -85,6 +87,7 @@ class Menu extends Phaser.Scene {
 
           game.settings = {
             spaceshipSpeed: 4,
+            miniSpaceshipSpeed: 6,
             gameTimer: 45000    
           }
 
