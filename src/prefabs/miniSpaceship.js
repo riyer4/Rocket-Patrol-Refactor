@@ -1,4 +1,4 @@
-//mini spaceship prefab
+//mini spaceship prefabs
 
 class miniSpaceship extends Phaser.GameObjects.Sprite {
     constructor(scene, x, y, texture, frame, pointValue) {
