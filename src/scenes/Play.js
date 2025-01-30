@@ -34,7 +34,7 @@ class Play extends Phaser.Scene {
 
         //add mini spaceships x 3
 
-        this.miniShip01 = new miniSpaceship(this, game.config.width + borderUISize*8, borderUISize*8, 'miniSpaceship', 0, 50)
+        this.miniShip01 = new miniSpaceship(this, game.config.width*2, borderUISize*8, 'miniSpaceship', 0, 50)
         this.miniShip02 = new miniSpaceship(this, game.config.width + borderUISize*8, borderUISize*8 + borderPadding*2 , 'miniSpaceship', 0, 50)
         this.miniShip03 = new miniSpaceship(this, game.config.width, borderUISize*8 + borderPadding*8, 'miniSpaceship', 0, 50)
 
