@@ -154,7 +154,7 @@ class Play extends Phaser.Scene {
 
         //score stuff
 
-        this.p1Score += ship.points
+        this.p1Score += ship.point
         this.scoreLeft.text = this.p1Score
 
         this.sound.play('sfx-explosion')
