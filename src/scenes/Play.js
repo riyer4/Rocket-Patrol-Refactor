@@ -97,6 +97,10 @@ class Play extends Phaser.Scene {
         this.ship02.update()
         this.ship03.update()
 
+        this.miniShip01.update()
+        this.miniShip02.update()
+        this.miniShip03.update()
+
         //collisions check!
 
         if(this.checkCollision(this.p1Rocket, this.ship03)) {
@@ -114,11 +118,31 @@ class Play extends Phaser.Scene {
             this.shipExplode(this.ship01)
         }
 
+        if(this.checkCollision(this.p1Rocket, this.miniShip03)) {
+            this.p1Rocket.reset()
+            this.shipExplode(this.miniShip03)
+        }
+
+        if(this.checkCollision(this.p1Rocket, this.miniShip02)) {
+            this.p1Rocket.reset()
+            this.shipExplode(this.miniShip02)
+        }
+
+        if(this.checkCollision(this.p1Rocket, this.miniShip01)) {
+            this.p1Rocket.reset()
+            this.shipExplode(this.miniShip01)
+        }
+
+        
+
         if(!this.gameOver) {
             this.p1Rocket.update()
             this.ship01.update()
             this.ship02.update()
             this.ship03.update()
+            this.miniShip01.update()
+            this.miniShip02.update()
+            this.miniShip03.update()
         }
 
     }
