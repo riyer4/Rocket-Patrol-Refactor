@@ -19,7 +19,7 @@ class miniSpaceship extends Phaser.GameObjects.Sprite {
         //wrap
 
         if(this.x <= 0 - this.width) {
-            this.x = game.config.width
+            this.x = game.config.width - borderPadding
         }
     }
 
