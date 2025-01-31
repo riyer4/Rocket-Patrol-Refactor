@@ -36,7 +36,7 @@ class Play extends Phaser.Scene {
 
         this.miniShip01 = new miniSpaceship(this, game.config.width + borderUISize*6, borderUISize*10 + borderPadding*4, 'miniSpaceship', 0, 50).setOrigin(0, 0)
         this.miniShip02 = new miniSpaceship(this, game.config.width + borderUISize*3, borderUISize*15 + borderPadding*2 , 'miniSpaceship', 0, 50).setOrigin(0, 0)
-        this.miniShip03 = new miniSpaceship(this, game.config.width, borderUISize*10 + borderPadding, 'miniSpaceship', 0, 50).setOrigin(0, 0)
+        this.miniShip03 = new miniSpaceship(this, game.config.width, borderUISize*10 + borderPadding*4, 'miniSpaceship', 0, 50).setOrigin(0, 0)
 
         //define the keys
 
