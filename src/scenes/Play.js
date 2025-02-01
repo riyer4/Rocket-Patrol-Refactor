@@ -27,7 +27,10 @@ class Play extends Phaser.Scene {
 
         // add rocket (p1) yuh
 
-        this.p1Rocket = new Rocket(this, game.config.width/2, game.config.height - borderUISize - borderPadding, 'rocket').setOrigin(0.5, 0)
+        this.p1Rocket = new Rocket(this, game.config.width/4, game.config.height - borderUISize - borderPadding, 'rocket').setOrigin(0.5, 0)
+
+        this.p2Rocket = new Rocket(this, game.config.width/2, game.config.height - borderUISize - borderPadding, 'rocket').setOrigin(0.5, 0)
+
 
         //add spaceships x 3
 
@@ -152,12 +155,15 @@ class Play extends Phaser.Scene {
         }
 
         if (this.gameOver && Phaser.Input.Keyboard.JustDown(keyLEFT)) {
+            
             this.scene.start("menuScene")
           }
 
         this.starfield.tilePositionX -= 4
 
         this.p1Rocket.update()
+        this.p2Rocket.update()
+
 
         this.ship01.update()
         this.ship02.update()
@@ -224,8 +230,56 @@ class Play extends Phaser.Scene {
         //     this.rocketMiss = false     
         // // }
 
+        if(this.checkCollision(this.p2Rocket, this.ship03)) {
+            this.p2Rocket.reset()
+            this.shipExplode(this.ship03)
+            // this.gameTime += 5000
+            // game.settings.gameTimer += 5000
+
+        }
+
+        if(this.checkCollision(this.p2Rocket, this.ship02)) {
+            this.p2Rocket.reset()
+            this.shipExplode(this.ship02)
+            // this.gameTime += 5000
+            // game.settings.gameTimer += 5000
+
+        }
+
+        if(this.checkCollision(this.p2Rocket, this.ship01)) {
+            this.p2Rocket.reset()
+            this.shipExplode(this.ship01)
+            // this.gameTime += 5000
+            // game.settings.gameTimer += 5000
+
+        }
+
+        if(this.checkCollision(this.p2Rocket, this.miniShip03)) {
+            this.p2Rocket.reset()
+            this.shipExplode(this.miniShip03)
+            // this.gameTime += 5000
+            // game.settings.gameTimer += 5000
+
+        }
+
+        if(this.checkCollision(this.p2Rocket, this.miniShip02)) {
+            this.p2Rocket.reset()
+            this.shipExplode(this.miniShip02)
+            // this.gameTime += 5000
+            // game.settings.gameTimer += 5000
+        }
+
+        if(this.checkCollision(this.p2Rocket, this.miniShip01)) {
+            this.p2Rocket.reset()
+            this.shipExplode(this.miniShip01)
+            // this.gameTime += 5000
+            // game.settings.gameTimer += 5000
+        }
+
+
         if(!this.gameOver) {
             this.p1Rocket.update()
+            this.p2Rocket.update()
             this.ship01.update()
             this.ship02.update()
             this.ship03.update()

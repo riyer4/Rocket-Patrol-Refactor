@@ -92,7 +92,7 @@ class Menu extends Phaser.Scene {
 
             fixedWidth: 200
         }
-        this.highscoreLeft = this.add.text(borderUISize - borderPadding*2, borderUISize*7 + borderPadding*20, `Highscore: ${this.highscore}`, highscoreConfig)
+        this.highscoreLeft = this.add.text(borderUISize - borderPadding*2, borderUISize*7 + borderPadding*21, `Highscore: ${this.highscore}`, highscoreConfig)
 
 
         //keys
