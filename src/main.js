@@ -7,7 +7,7 @@
 // Displays time remaining (3) *
 // New title screen (3) *
 // 4 new explosion sound effects (3)
-// Game Music (1)
+// Game Music (1) *
 // ^^ the mods you chose from the list below, their point values, and if necessary, an explanation of their implementation
 // Sources:
 // citations for any sources you used in your code (you do not need to cite Nathan's code or Phaser documentation)
