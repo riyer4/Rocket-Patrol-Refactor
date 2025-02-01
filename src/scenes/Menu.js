@@ -67,7 +67,7 @@ class Menu extends Phaser.Scene {
 
         //music
 
-        let bgm = this.sound.play('music')
+        let bgm = game.add.audio('music')
         bgm.loop = true
 
 
