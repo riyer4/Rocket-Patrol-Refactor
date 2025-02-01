@@ -1,15 +1,14 @@
 // Ria Iyer [FIX THE REST LATER!!]
 // Rocket Patrol: The Second Saga
-// Total Time Taken: 5 hrs
+// Total Time Taken: 12 hrs
 // Mods added: [* = done]
-// New Enemy Spaceship (5) *
-// Misses/Hits Score Differentiation (5) or 2 player
-// Displays time remaining (3) *
-// New title screen (3) *
-// 4 new explosion sound effects (3) *
-// Game Music (1) *
-// Highscore (1) *
-// ^^ the mods you chose from the list below, their point values, and if necessary, an explanation of their implementation
+// New Enemy Spaceship (5) * -> the little red ships
+// 2 player (5) * -> dual rocket
+// Displays time remaining (3) * -> top left of screen
+// New title screen (3) * -> made with PixilArt
+// 4 new explosion sound effects (3) * -> found on Pixibay
+// Game Music (1) * -> also found on Pixibay
+// Highscore (1) * -> bottom left
 // Sources:
 // https://phaser.io/news/2019/07/save-and-load-progress-with-local-storage
 
