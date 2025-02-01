@@ -27,6 +27,8 @@ class Menu extends Phaser.Scene {
         this.load.audio('sfx-explosion', './assets/sfx-explosion.wav')
         this.load.audio('sfx-shot', './assets/sfx-shot.wav')
 
+        this.load.audio('music', './assets/music.mp3')
+
     }
 
 
@@ -57,11 +59,17 @@ class Menu extends Phaser.Scene {
         menuConfig.backgroundColor = '#00FF00'
         menuConfig.color = '#000'
         this.add.text(game.config.width/2, game.config.height/2 + borderUISize + borderPadding, 'Press <- for Novice or -> for Expert', menuConfig).setOrigin(0.5)
-
+                
         //keys
 
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT)
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT)
+
+        //music
+
+        let bgm = this.sound.play('music')
+        bgm.loop = true
+
 
     }
 
