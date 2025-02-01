@@ -38,6 +38,10 @@ class Play extends Phaser.Scene {
         this.miniShip02 = new miniSpaceship(this, game.config.width + borderUISize*3, borderUISize*15 + borderPadding*2 , 'miniSpaceship', 0, 50).setOrigin(0, 0)
         this.miniShip03 = new miniSpaceship(this, game.config.width, borderUISize*10 + borderPadding*4, 'miniSpaceship', 0, 50).setOrigin(0, 0)
 
+        //group all enemies
+
+        this.enemyShips = this.add.group([this.ship01, this.ship02, this.ship03, this.miniShip01, this.miniShip02, this.miniShip03])
+
         //define the keys
 
         keyFIRE = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F)
@@ -68,16 +72,43 @@ class Play extends Phaser.Scene {
 
         // time
 
+        let timeConfig = {
+            fontFamily: 'Courier',
+            fontSize: '28px',
+            backgroundColor: '#F3B141',
+            color: '#843605',
+            allig: 'right',
+            padding: {
+                top: 5,
+                bottom: 5,
+            },
+
+            fixedWidth: 135
+        }
+
         scoreConfig.fixedWidth = 0
+
+        this.gameTime = this.game.settings.gameTimer // writing down initial time
+
         this.clock = this.time.delayedCall(game.settings.gameTimer, () => {
             this.add.text(game.config.width/2, game.config.height/2, 'GAME OVER', scoreConfig).setOrigin(0.5)
             this.add.text(game.config.width/2, game.config.height/2 + 64, 'Press (R) to Restart or <- for Menu', scoreConfig).setOrigin(0.5)
             this.gameOver = true
 
         }, null, this)
+
+        this.timeLeft = this.add.text(borderUISize + borderPadding*40, borderUISize + borderPadding*2, `Time: ${this.gameTime}`, timeConfig)
     }
 
     update() {
+
+        //timer mods
+        if (this.gameOver) {
+            this.gameTime = 0
+        } else {
+            this.gameTime -= 8.25 // subtracting 1 second per frame
+        }
+        this.timeLeft.text = `Time: ${Math.floor(this.gameTime / 1000)}`
         
         // check for input for restarting
 
@@ -131,6 +162,12 @@ class Play extends Phaser.Scene {
         if(this.checkCollision(this.p1Rocket, this.miniShip01)) {
             this.p1Rocket.reset()
             this.shipExplode(this.miniShip01)
+        }
+
+        // subtracting points if collision doesn't happen
+
+        if (!checkCollisions(this.p1Rocket, this.enemyShips)) {
+            this.p1Score -= 10
         }
 
         
