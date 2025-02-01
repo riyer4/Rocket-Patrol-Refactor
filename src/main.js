@@ -1,4 +1,4 @@
-// Ria Iyer [FIX THE REST LATER!!]
+// Ria Iyer
 // Rocket Patrol: The Second Saga
 // Total Time Taken: 12 hrs
 // Mods added: [* = done]
