@@ -3,6 +3,8 @@ class Menu extends Phaser.Scene {
         super("menuScene")
     }
 
+    
+
     preload() {
     
     // image + sprite loading
@@ -27,13 +29,23 @@ class Menu extends Phaser.Scene {
         this.load.audio('sfx-select', './assets/sfx-select.wav')
         this.load.audio('sfx-explosion', './assets/sfx-explosion.wav')
         this.load.audio('sfx-shot', './assets/sfx-shot.wav')
+        this.load.audio('expl1', './assets/expl1.mp3')
+        this.load.audio('expl2', './assets/expl2.mp3')
+        this.load.audio('expl3', './assets/expl3.mp3')
+        this.load.audio('expl4', './assets/expl4.mp3')
+
 
         this.load.audio('music', './assets/music.mp3')
+
+    
 
     }
 
 
+
     create() {
+
+     
 
         this.anims.create({
             key: 'explode',
@@ -108,7 +120,7 @@ class Menu extends Phaser.Scene {
             localStorage.setItem('highscore', this.p1Score)
             }  
         }
-        
+
         if (Phaser.Input.Keyboard.JustDown(keyLEFT)) {
 
           // easy mode

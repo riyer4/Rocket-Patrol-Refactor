@@ -4,7 +4,10 @@ class Play extends Phaser.Scene {
     }
 
 
+
     create() {
+
+     
 
         //place tile sprite
 
@@ -248,6 +251,13 @@ class Play extends Phaser.Scene {
     }
 
     shipExplode(ship) {
+
+        const explosions = ([
+            'expl1',
+            'expl2',
+            'expl3',
+            'expl4',
+        ])
         //temp hide ship
 
         ship.alpha = 0
@@ -267,6 +277,11 @@ class Play extends Phaser.Scene {
         this.p1Score += ship.point
         this.scoreLeft.text = this.p1Score
 
-        this.sound.play('sfx-explosion')
+        // this.sound.play('sfx-explosion')
+
+        let randomNum = Math.floor(Math.random() * explosions.length)
+        let randomSound = explosions[randomNum]
+
+        this.sound.play(randomSound)
     }
 }
