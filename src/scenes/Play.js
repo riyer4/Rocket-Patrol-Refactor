@@ -125,7 +125,7 @@ class Play extends Phaser.Scene {
 
         // hs mods
 
-        highscoreLeft.text = `Highscore: ${localStorage.getItem('highscore')}` 
+        this.highscoreLeft.text = `Highscore: ${localStorage.getItem('highscore')}` 
         {
             if (this.p1Score > localStorage.getItem('highscore')) {
             localStorage.setItem('highscore', this.p1Score)

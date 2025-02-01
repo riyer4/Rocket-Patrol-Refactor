@@ -99,6 +99,16 @@ class Menu extends Phaser.Scene {
 
     
     update() {
+
+        // hs mods 
+
+        this.highscoreLeft.text = `Highscore: ${localStorage.getItem('highscore')}` 
+        {
+            if (this.p1Score > localStorage.getItem('highscore')) {
+            localStorage.setItem('highscore', this.p1Score)
+            }  
+        }
+        
         if (Phaser.Input.Keyboard.JustDown(keyLEFT)) {
 
           // easy mode
