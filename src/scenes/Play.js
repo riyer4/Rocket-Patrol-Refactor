@@ -134,43 +134,60 @@ class Play extends Phaser.Scene {
 
         //collisions check!
 
+
         if(this.checkCollision(this.p1Rocket, this.ship03)) {
             this.p1Rocket.reset()
             this.shipExplode(this.ship03)
+            this.gameTime += 5000
+            game.settings.gameTimer += 5000
+
         }
 
         if(this.checkCollision(this.p1Rocket, this.ship02)) {
             this.p1Rocket.reset()
             this.shipExplode(this.ship02)
+            this.gameTime += 5000
+            game.settings.gameTimer += 5000
+
         }
 
         if(this.checkCollision(this.p1Rocket, this.ship01)) {
             this.p1Rocket.reset()
             this.shipExplode(this.ship01)
+            this.gameTime += 5000
+            game.settings.gameTimer += 5000
+
         }
 
         if(this.checkCollision(this.p1Rocket, this.miniShip03)) {
             this.p1Rocket.reset()
             this.shipExplode(this.miniShip03)
+            this.gameTime += 5000
+            game.settings.gameTimer += 5000
+
         }
 
         if(this.checkCollision(this.p1Rocket, this.miniShip02)) {
             this.p1Rocket.reset()
             this.shipExplode(this.miniShip02)
+            this.gameTime += 5000
+            game.settings.gameTimer += 5000
         }
 
         if(this.checkCollision(this.p1Rocket, this.miniShip01)) {
             this.p1Rocket.reset()
             this.shipExplode(this.miniShip01)
+            this.gameTime += 5000
+            game.settings.gameTimer += 5000
         }
 
-        // subtracting points if collision doesn't happen
-
-        if (!checkCollisions(this.p1Rocket, this.enemyShips)) {
-            this.p1Score -= 10
-        }
-
-        
+        // if (!this.checkCollision(this.p1Rocket, this.enemyShips)) {
+        //     this.p1Rocket.reset()
+        //     this.gameTime -= 5000
+        //     game.settings.gameTimer += 5000
+   
+        //     this.rocketMiss = false     
+        // // }
 
         if(!this.gameOver) {
             this.p1Rocket.update()
