@@ -49,6 +49,27 @@ class Play extends Phaser.Scene {
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT)
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT)
 
+        //hs 
+
+        this.highscore = 0
+        let highscoreConfig = {
+            fontFamily: 'Courier',
+            fontSize: '20px',
+            backgroundColor: '#000',
+            color: '#fff',
+            allig: 'right',
+            padding: {
+                top: 5,
+                bottom: 5,
+            },
+
+            fixedWidth: 200
+        }
+
+        this.highscoreLeft = this.add.text(borderUISize - borderPadding*2, borderUISize*7 + borderPadding*20, `Highscore: ${this.highscore}`, highscoreConfig)
+
+
+
         this.p1Score = 0 //score initialization
 
         let scoreConfig = {
@@ -102,6 +123,17 @@ class Play extends Phaser.Scene {
 
     update() {
 
+        // hs mods
+
+        highscoreLeft.text = `Highscore: ${localStorage.getItem('highscore')}` 
+        {
+            if (this.p1Score > localStorage.getItem('highscore')) {
+            localStorage.setItem('highscore', this.p1Score)
+            }  
+        }
+
+      
+
         //timer mods
         if (this.gameOver) {
             this.gameTime = 0
@@ -138,47 +170,47 @@ class Play extends Phaser.Scene {
         if(this.checkCollision(this.p1Rocket, this.ship03)) {
             this.p1Rocket.reset()
             this.shipExplode(this.ship03)
-            this.gameTime += 5000
-            game.settings.gameTimer += 5000
+            // this.gameTime += 5000
+            // game.settings.gameTimer += 5000
 
         }
 
         if(this.checkCollision(this.p1Rocket, this.ship02)) {
             this.p1Rocket.reset()
             this.shipExplode(this.ship02)
-            this.gameTime += 5000
-            game.settings.gameTimer += 5000
+            // this.gameTime += 5000
+            // game.settings.gameTimer += 5000
 
         }
 
         if(this.checkCollision(this.p1Rocket, this.ship01)) {
             this.p1Rocket.reset()
             this.shipExplode(this.ship01)
-            this.gameTime += 5000
-            game.settings.gameTimer += 5000
+            // this.gameTime += 5000
+            // game.settings.gameTimer += 5000
 
         }
 
         if(this.checkCollision(this.p1Rocket, this.miniShip03)) {
             this.p1Rocket.reset()
             this.shipExplode(this.miniShip03)
-            this.gameTime += 5000
-            game.settings.gameTimer += 5000
+            // this.gameTime += 5000
+            // game.settings.gameTimer += 5000
 
         }
 
         if(this.checkCollision(this.p1Rocket, this.miniShip02)) {
             this.p1Rocket.reset()
             this.shipExplode(this.miniShip02)
-            this.gameTime += 5000
-            game.settings.gameTimer += 5000
+            // this.gameTime += 5000
+            // game.settings.gameTimer += 5000
         }
 
         if(this.checkCollision(this.p1Rocket, this.miniShip01)) {
             this.p1Rocket.reset()
             this.shipExplode(this.miniShip01)
-            this.gameTime += 5000
-            game.settings.gameTimer += 5000
+            // this.gameTime += 5000
+            // game.settings.gameTimer += 5000
         }
 
         // if (!this.checkCollision(this.p1Rocket, this.enemyShips)) {

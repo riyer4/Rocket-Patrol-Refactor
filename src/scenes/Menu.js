@@ -63,6 +63,26 @@ class Menu extends Phaser.Scene {
         menuConfig.color = '#000'
         this.add.text(game.config.width/2, game.config.height - borderPadding - 90, 'Press <- for Novice or -> for Expert', menuConfig).setOrigin(0.5)
                 
+
+        // highscore
+
+        this.highscore = 0
+        let highscoreConfig = {
+            fontFamily: 'Courier',
+            fontSize: '20px',
+            backgroundColor: '#000',
+            color: '#fff',
+            allig: 'right',
+            padding: {
+                top: 5,
+                bottom: 5,
+            },
+
+            fixedWidth: 200
+        }
+        this.highscoreLeft = this.add.text(borderUISize - borderPadding*2, borderUISize*7 + borderPadding*20, `Highscore: ${this.highscore}`, highscoreConfig)
+
+
         //keys
 
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT)
@@ -70,8 +90,9 @@ class Menu extends Phaser.Scene {
 
         //music
 
-        let bgm = game.add.audio('music')
+        let bgm = this.sound.add('music')
         bgm.loop = true
+        bgm.play()
 
 
     }
